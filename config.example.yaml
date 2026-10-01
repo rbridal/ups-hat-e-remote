@@ -1,0 +1,13 @@
+# Copy to config.yaml. Do not commit config.yaml.
+# mqtt.host: shop-ha 172.31.0.20, or home-ha 172.31.0.30 for a house Pi.
+device_id: shop-dash
+device_name: Shop Dash UPS
+i2c_bus: 1
+i2c_addr: 0x2d
+interval_seconds: 15
+mqtt:
+  host: 172.31.0.20
+  port: 1883
+  username: ""
+  password: "CHANGE_ME"
+  topic_prefix: ups-hat-e/shop-dash

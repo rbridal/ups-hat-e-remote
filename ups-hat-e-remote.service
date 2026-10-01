@@ -1,0 +1,18 @@
+[Unit]
+Description=Waveshare UPS HAT (E) Remote
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=dash
+Group=dash
+SupplementaryGroups=i2c dialout
+WorkingDirectory=/opt/ups-hat-e-remote
+ExecStart=/opt/ups-hat-e-remote/venv/bin/python /opt/ups-hat-e-remote/agent.py /opt/ups-hat-e-remote/config.yaml
+Restart=always
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
