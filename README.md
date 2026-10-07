@@ -4,6 +4,14 @@ Reads a Waveshare UPS HAT (E) on a Raspberry Pi (I2C `0x2d`) and publishes the s
 
 Pair with [ha-ups-hat-e-remote](https://github.com/rbridal/ha-ups-hat-e-remote). Point `mqtt.host` at whichever Home Assistant owns this Pi (shop-ha or home-ha Mosquitto).
 
+## Related repositories
+
+Rule of thumb: HAT on the HA box → use the local integration; HAT on a different Pi → install the remote service on that Pi and the remote integration in Home Assistant.
+
+- [homeassistant_waveshare_ups_hat_e](https://github.com/rbridal/homeassistant_waveshare_ups_hat_e) — Home Assistant integration for a UPS HAT (E) attached directly to the HA host (I2C).
+- [ha-ups-hat-e-remote](https://github.com/rbridal/ha-ups-hat-e-remote) — Home Assistant integration that displays a remote UPS HAT (E) over MQTT.
+- [ups-hat-e-remote](https://github.com/rbridal/ups-hat-e-remote) — Companion service that runs on the Pi with the HAT, reads I2C, and publishes status over MQTT. **This repo.**
+
 ## Topics
 
 | Topic | Retain | Payload |
